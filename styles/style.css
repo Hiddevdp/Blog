@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI";
+}
+
+body {
+  background-color: rgb(192, 192, 192);
+}
+
+header {
+  background-color: rgb(27, 46, 46);
+  padding: 1em;
+  text-align: center;
+  color: whitesmoke;
+}
+main {
+  padding: 1em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+h2,
+p {
+  margin-bottom: 1em;
+}
+
+ul {
+  margin: 0 0 1em 3em;
+}
+
+article {
+  width: 50em;
+  background-color: rgb(38, 32, 73);
+  color: white;
+  padding: 1em;
+  margin: 0 0 1em 0;
+  border-radius: 1em;
+  box-shadow: 0 0.2em 1em black;
+}
