@@ -1,43 +1,219 @@
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI";
 }
 
+/* Set font styles */
 body {
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(53, 53, 53);
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 header {
-  background-color: rgb(27, 46, 46);
+  /* position: fixed; */
+  top: 0;
+  z-index: 99;
+  width: 100%;
   padding: 1em;
-  text-align: center;
-  color: whitesmoke;
-}
-main {
-  padding: 1em;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(rgb(44, 44, 44), rgba(255, 255, 255, 0));
 }
 
+nav ul {
+  display: flex;
+  color: white;
+}
+
+nav ul li {
+  color: white;
+  list-style: none;
+  transition: 0.2s;
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  &:hover {
+    animation: rainbow 2s infinite;
+  }
+}
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+h1 {
+  color: white;
+
+  &:hover {
+    animation: rainbow 2s infinite;
+  }
+}
+
+h3,
 h2,
 p,
-h3 {
+ul {
   margin-bottom: 1em;
 }
 
-ul {
-  margin: 0 0 1em 3em;
+main {
+  margin-top: 7em;
 }
 
 article {
-  width: 50em;
-  background-color: rgb(38, 32, 73);
   color: white;
-  padding: 1em;
-  margin: 0 0 1em 0;
+  background-color: rgb(88, 88, 88);
+  width: 80%;
+  padding: 2em;
   border-radius: 1em;
-  box-shadow: 0 0.2em 1em black;
+  margin: 5em auto 5em auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid white;
+}
+
+.persInfo {
+  display: grid;
+  grid-template: 1fr/ 1fr 1fr;
+  height: 15em;
+  position: relative;
+}
+
+.persInfo img {
+  position: absolute;
+  bottom: 0;
+}
+
+.persInfo section {
+  grid-area: 1/1;
+}
+
+.idImg {
+  height: 18em;
+  grid-area: 1/2/3/3;
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  bottom: -1em;
+  transition: 0.5s;
+}
+article:hover img {
+  height: 19em;
+}
+
+.vakken > ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.vakken > ul > a {
+  text-decoration: none;
+  background-color: white;
+  border-radius: 1em;
+  width: 25em;
+  height: 25em;
+  margin: 1em;
+  transition: 0.5s;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+hgroup {
+  position: absolute;
+  top: 0;
+  color: white;
+  padding: 0.5em 1em;
+  /* background-color: rgba(0, 0, 0, 0.582); */
+  background-image: linear-gradient(
+    rgba(32, 32, 32, 0.596) 30%,
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 1;
+  width: 100%;
+}
+
+.vakken > ul > a:hover {
+  transform: scale(1.05);
+}
+
+.vakken > ul > a:hover img {
+  transform: scale(0.9);
+}
+
+.vakken > ul > a > img {
+  height: 120%;
+  transition: 0.5s;
+}
+
+.vakken > ul > a:nth-of-type(5) > img {
+  width: 120%;
+  height: auto;
+  height: auto;
+}
+
+footer {
+  color: white;
+  /* background-color: rgb(8, 8, 8); */
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+footer p {
+  font-size: 1em;
 }
