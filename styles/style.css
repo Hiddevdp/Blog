@@ -106,7 +106,6 @@ main {
 
 article {
   color: white;
-  background-color: rgb(88, 88, 88);
   width: 80%;
   padding: 2em;
   border-radius: 1em;
@@ -114,7 +113,7 @@ article {
   display: flex;
   flex-direction: column;
   position: relative;
-  border: 2px solid white;
+  box-shadow: black 6px 6px 1em;
 }
 
 .persInfo {
@@ -157,7 +156,6 @@ article:hover img {
 
 .vakken > ul > a {
   text-decoration: none;
-  background-color: white;
   border-radius: 1em;
   width: 25em;
   height: 25em;
@@ -169,6 +167,30 @@ article:hover img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: black 6px 6px 1em;
+}
+
+.vakken > ul > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.349);
+  width: 0;
+  height: 0;
+  transition: 1s ease;
+  z-index: 2;
+}
+
+.vakken > ul > a:hover::before,
+.vakken > ul > a:focus::before {
+  width: 300%;
+  height: 300%;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
 }
 
 hgroup {
@@ -187,6 +209,12 @@ hgroup {
 
 .vakken > ul > a:hover {
   transform: scale(1.05);
+  box-shadow: black 1px 1px 1em;
+}
+
+.vakken > ul > a:active {
+  transition: 0.2s;
+  transform: scale(1);
 }
 
 .vakken > ul > a:hover img {
@@ -194,14 +222,8 @@ hgroup {
 }
 
 .vakken > ul > a > img {
-  height: 120%;
+  height: 115%;
   transition: 0.5s;
-}
-
-.vakken > ul > a:nth-of-type(5) > img {
-  width: 120%;
-  height: auto;
-  height: auto;
 }
 
 footer {
