@@ -1,9 +1,14 @@
-document.querySelectorAll(".vakken > ul > a").forEach((element) => {
-  element.addEventListener("mousemove", function (e) {
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    this.style.setProperty("--x", `${x}px`);
-    this.style.setProperty("--y", `${y}px`);
+document.querySelectorAll(".vakken > ul > li").forEach((element) => {
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+    document
+      .querySelectorAll(".vakken > ul > li.clicked")
+      .forEach((clickedElement) => {
+        if (clickedElement !== this) {
+          clickedElement.classList.remove("clicked");
+        }
+      });
+    this.classList.toggle("clicked");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });

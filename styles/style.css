@@ -145,16 +145,22 @@ article:hover img {
   height: 19em;
 }
 
+.vakken {
+  display: flex;
+  justify-content: center;
+}
+
 .vakken > ul {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease;
 }
 
-.vakken > ul > a {
+.vakken > ul > li {
   text-decoration: none;
   border-radius: 1em;
   width: 25em;
@@ -167,30 +173,28 @@ article:hover img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  order: 1;
+  cursor: pointer;
   box-shadow: black 6px 6px 1em;
 }
 
-.vakken > ul > a::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: var(--y, 50%);
-  left: var(--x, 50%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.349);
-  width: 0;
-  height: 0;
-  transition: 1s ease;
-  z-index: 2;
+.vakken > ul > li > a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
 }
 
-.vakken > ul > a:hover::before,
-.vakken > ul > a:focus::before {
-  width: 300%;
-  height: 300%;
-  top: var(--y, 50%);
-  left: var(--x, 50%);
+.vakken > ul > li > a > section {
+  margin: 3em 1em 1em 1em;
+  transition: 0.5s;
+  width: 62em;
+}
+
+.vakken > ul > li > a > section > ul {
+  margin: 0 1em;
 }
 
 hgroup {
@@ -207,23 +211,42 @@ hgroup {
   width: 100%;
 }
 
-.vakken > ul > a:hover {
+.vakken > ul > li:not(.clicked):hover {
   transform: scale(1.05);
   box-shadow: black 1px 1px 1em;
 }
 
-.vakken > ul > a:active {
+.vakken > ul > li:not(.clicked):active {
   transition: 0.2s;
   transform: scale(1);
 }
 
-.vakken > ul > a:hover img {
+.vakken > ul > li:not(.clicked):hover img {
   transform: scale(0.9);
 }
 
-.vakken > ul > a > img {
-  height: 115%;
+.vakken > ul > li > a > img {
+  height: 30em;
   transition: 0.5s;
+  align-self: center;
+  margin-left: 64em;
+}
+
+.vakken > ul > li.clicked {
+  width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  order: 0;
+}
+
+.vakken > ul > li.clicked section {
+  display: block;
+}
+
+.vakken > ul > li.clicked > a > img {
+  height: 15em;
+  margin: 3em 1em 1em 1em;
+  align-self: flex-start;
 }
 
 footer {
