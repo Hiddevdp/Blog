@@ -211,17 +211,17 @@ hgroup {
   width: 100%;
 }
 
-.vakken > ul > li:not(.clicked):hover {
+.vakken > ul > li:hover {
   transform: scale(1.05);
   box-shadow: black 1px 1px 1em;
 }
 
-.vakken > ul > li:not(.clicked):active {
+.vakken > ul > li:active {
   transition: 0.2s;
   transform: scale(1);
 }
 
-.vakken > ul > li:not(.clicked):hover img {
+.vakken > ul > li:hover img {
   transform: scale(0.9);
 }
 
@@ -247,6 +247,33 @@ hgroup {
   height: 15em;
   margin: 3em 1em 1em 1em;
   align-self: flex-start;
+}
+
+.wnList > li {
+  &:first-of-type {
+    background-color: yellow;
+  }
+  &:nth-of-type(2) {
+    background-color: blue;
+  }
+  &:nth-of-type(3) {
+    background-color: crimson;
+  }
+  &:nth-of-type(4) {
+    background-color: green;
+  }
+  &:nth-of-type(5) {
+    background-color: hotpink;
+  }
+  &:nth-of-type(6) {
+    background-color: purple;
+  }
+  &:nth-of-type(7) {
+    background-color: orangered;
+  }
+  &:nth-of-type(8) {
+    background-color: teal;
+  }
 }
 
 footer {
