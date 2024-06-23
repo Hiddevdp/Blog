@@ -190,7 +190,7 @@ h1 {
   width: 80%;
   padding: 1em;
   border-radius: 1em;
-  margin: 5em auto 5em auto;
+  margin: 8em auto 5em auto;
   display: grid;
   grid-template: 1fr 5fr/1fr 1fr;
   position: relative;
