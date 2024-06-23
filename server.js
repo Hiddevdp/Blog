@@ -11,17 +11,29 @@ app.get("/", (req, res) => {
   res.render("index", { body: "aboutMe" });
 });
 
-app.get("/vakken", (req, res) => {
-  res.render("index", { body: "vakken" });
+app.get("/:viewname", (req, res) => {
+  res.render("index", { body: req.params.viewname });
 });
 
-app.get("/weekly-nerds", (req, res) => {
-  res.render("index", { body: "weeklyNerds" });
+// app.get("/cv", (req, res) => {
+//   res.render("index", { body: "cv" });
+// });
+
+// app.get("/contact", (req, res) => {
+//   res.render("index", { body: "contact" });
+// });
+
+app.get("/nerds/:viewname", (req, res) => {
+  res.render("index", { body: req.params.viewname });
 });
 
-app.get("/meesterproef", (req, res) => {
-  res.render("index", { body: "meesterproef" });
+app.get("/vakken/:viewname", (req, res) => {
+  res.render("index", { body: req.params.viewname });
 });
+
+// app.get("/projecten/3d", (req, res) => {
+//   res.render("index", { body: "3d" });
+// });
 
 const PORT = process.env.PORT || 3000;
 

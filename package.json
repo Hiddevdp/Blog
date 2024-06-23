@@ -1,24 +1,28 @@
 {
-  "name": "blog",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hiddevdp/Blog.git"
+    "url": "git+https://github.com/Hiddevdp/Portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hiddevdp/Blog/issues"
+    "url": "https://github.com/Hiddevdp/Portfolio/issues"
   },
-  "homepage": "https://github.com/Hiddevdp/Blog#readme",
+  "homepage": "https://github.com/Hiddevdp/Portfolio#readme",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "node": "^22.2.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.0"
   }
 }
